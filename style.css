@@ -111,6 +111,87 @@ div.ligne h2:hover {
 }
 
 
+.banniere h5 {
+	padding-left: 1em;
+	text-shadow: 8px 8px 8px black;
+}
+
+.cv table {
+	  max-width: 900px; /* limite max */
+	  max-height: 1000px;
+	}
+	
+.container {
+  padding: 1em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.apropos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: flex-end;
+  padding: 1em;
+}
+
+.apropos img {
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 300px;
+}
+
+.apropos p {
+  flex: 2 1 400px;
+  text-align: justify;
+  text-indent: 1.5em;
+  font-size: 1.1em;
+  margin: 0;
+}
+	
+.texte {
+  flex: 1;
+  font-size: 1.1em;
+  text-align: justify;
+  text-indent: 1.5em;
+  margin: 0;
+  border: 2px solid #E29A00;
+  padding: 1em;
+  box-sizing: border-box;
+}
+	
+/* AFFICHAGE SUR LE PC */
+@media (min-width: 1300px) {
+  .apropos img {
+    width: 50%;
+    max-width: 300px;
+  }
+}
+
+/* AFFICHAGE SUR LE TELEPHONE */
+@media (max-width: 1300px) {
+  .apropos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .apropos img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .texte {
+    width: 100%;
+  }
+
+  .banniere h5 {
+	padding-left: 1%;
+	}
+
+
+}
+
+
 
 
 /* Afficher le sous-menu au survol */
@@ -128,7 +209,7 @@ h1 {
 	margin-bottom: 0.2em ;
 	margin-left: 1.3em;
 	color: #D9AE00;
-	font-size: 5em;
+	font-size: 4.5em;
     font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif ;
 	text-shadow: 5px 5px 5px black;
 	}
