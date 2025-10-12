@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <title> SAE 4</title>
+  <link rel="icon" href="logo_atlantide.png" type="image/icon type">
+  <link rel="stylesheet" href="../style.css">
+
+  </head>
+  
+  <body>
+  
+	<ul class="navbar">
+		<li><a href="../../index.html"> Page principale </a>
+		<li><a href="../index.html"> Retour </a>
+		<li><a href="../../bac/index.html"> BAC </a>
+		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
+		<li><a href="../../but3/index.html"> BUT 3 </a>
+		<li><a href="../../metrages/index.html"> Métrages </a>
+	</ul>
+    
+    <div class="ligne">
+    <h1>SAE 4 - Stylo Voltmètre p2</h1>
+    </div>
+	
+    <div class="ligne">
+    <h3>Récapitulatif : <br>	</h3>
+	<h4>
+	La SAé ou Situation d’Apprentissage et d’évaluation est un ensemble constitué d’une ou plusieurs tâches à réaliser par l’étudiant, en vue d’atteindre le but fixé.
+	<br><br> La SAE du semestre 4 vise à continuer la création du stylo-voltmètre, capable de prendre une tension entre 0 et 15 Vdc. Un affichage déporté via une carte STM32 lié par
+	une liaison UART (Universal Asynchronous Receiver / Transmitter) est également mis en place. Pour la Conversion Analogique Numérique, nous utilisons le microcontrôleur maître AtTiny85 (10 bits).
+    </h4>
+	</div>
+	
+	<br><br>
+    
+	<div class="ligne"> <h3> Dossier complet SAE : <br>	</h3>
+	<embed src="docs/rapport_sae_v4.pdf" width="60%" height="800" type="application/pdf"/>
+	</div>
+	 
+	
+	 
+	<br><br>
+
+    <div class="ligne"> <h3> Attendus SAE 4 : <br>	</h3>
+		<table width="100%"> <tr>
+			<td>
+				<a href="docs/attendus.pdf" target="_blank"> <h2> Référentiel </h2> </a>					
+			</td>
+			<td style="background-image: url('banniere_but2.jpg');  background-size: cover; "width="80%" height="100%"> <h5 width="80%" height="100%"> Lien vers les attendus de l’Université. </h5> </td>
+		</tr> </table>
+	</div>
+
+	<br><br>
+
+    <div class="ligne"> <h3> Description détaillée de la SAE 4 : <br>	</h3>
+	<table width="100%">
+		<tr><td style="width:80%"><h4> L’objectif de la SAE 4 est de créer un stylo-voltmètre. Le maître est le microcontrôleur AtTiny85 qui peut s’occuper d’une conversion analogique numérique 10 bits. Mais il va également nous servir à envoyer les données via le protocole UART (Universal Asynchronous Receiver / Transmitter). Ce protocole nécessite l’utilisation d’un fil pour les données, comprenant l'adresse, le poids, un mot binaire, une parité et un bit de stop. </h4></td><td> <img src="img/uart.jpg" width="100%" style="border-radius: 25% 10%;"/> </td></tr>
+	</table>
+	<table width="100%">
+		<tr><td> <img src="img/can2.jpg" width="100%" style="border-radius: 25% 10%;"/> </td><td style="width:80%"><h4> Pour la conversion analogique numérique, nous utilisons le CAN de l’AtTiny85. Ce CAN est codé sur 10 bits. L'avantage de ce convertisseur est qu'il est déjà intégré au microprocesseur principale. Il n'est donc pas nécessite d'en ajouter un. </h4></td></tr>
+	</table>
+	<table width="100%">
+		<tr><td style="width:80%"><h4> La majeure partie de nos microcontrôleurs ont besoins d’une alimentation comprise entre 2,7 V et 5,5 V. Nous avons alors choisi d’utiliser une tension de 3,3 Vdc pour alimenter la carte. Il nous faut donc utiliser un régulateur 3,3 V qui sera le LP XX. </h4></td><td> <img src="img/regul.jpg" width="100%" style="border-radius: 25% 10%;"/> </td></tr>
+	</table>
+	<table width="100%">
+		<tr><td> <img src="img/stm32f429.jpg" width="100%" style="border-radius: 25% 10%;"/> </td><td style="width:80%"><h4> Parallèlement, nous avons codé une interface graphique sur le microcontrôleur STM32. Cela a pour but de nous aider à décoder les trames UART du CAN et d’afficher ses valeurs sur l’écran. </h4></td></tr>
+	</table>
+	</div>
+
+	<br><br>
+
+	<div class="ligne"> <h3> Table des compétences : <br>	</h3>
+		<table width="100%" style="text-align :center;border-collapse: collapse;">
+		<tr style="text-align :center;border-collapse: collapse; border-width:8px; border-style:solid; border-color:black; width:20%">
+			<td ><h5 style="text-align :center;text-shadow: 2px 2px 4px black;font-size: 2em ;margin-top: 0.5em;margin-bottom: 0.5em;">Création du stylo-voltmètre</h5></td></tr>
+		<tr>
+			<td><h5 style="text-align :center;">Objectifs</h5></td></tr>
+		<tr style="text-align :center;border-collapse: collapse; border-bottom:1px; border-style:solid; border-color:black; width:20%">
+			<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td style="width:30%;"><h5 style="text-align :center;">Tâche réalisée</h5></td>
+			<td style="width:20%"><h5 style="text-align :center;">Ressource utilisée</h5></td>
+			<td style="width:20%;"><h5 style="text-align :center;">Traces</h5></td>
+			<td style="width:30%;"><h5 style="text-align :center;">Autoévaluation</h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td><h5 style="text-align :center;"> Tester les modules de réception et de transmission : </h5> <p style="margin-bottom: 1em;font-style: italic;">Pour pouvoir programmer l’AtTiny85, il faut créer une carte pouvant recevoir le microcontrôleur, le câble USBASP, une alimentation 3,3V ou 5V…</p> </td>
+			<td><h5 style="text-align :center;">C. Duvannaud<br> Fer à souder</h5></td>
+			<td><a href="docs/procedure_test_SD.pdf" target="_blank"> <h2> Procédure de test </h2> </a><a href="docs/Rapport_v03.pdf" target="_blank"> <h2> Rapport </h2> </a></td>		
+			<td><h5 style="text-align :center;"> L’AtTiny85 est désormais programmable grâce à notre carte. </h5> </td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td><h5 style="text-align :center;"> Imprimer la carte du stylo-voltmètre : </h5> <p style="margin-bottom: 1em;font-style: italic;">Pour pouvoir programmer l’AtTiny85, il faut créer une carte pouvant recevoir le microcontrôleur, le câble USBASP, une alimentation 3,3V ou 5V…</p> </td>
+			<td><h5 style="text-align :center;">KiCad<br>Fer à souder</h5></td>
+			<td><a href="docs/Schéma_Carte.pdf" target="_blank"> <h2> Schémas </h2> </a><a href="img/stylo.jpg" target="_blank"> <h2> Carte </h2> </a></td>		
+			<td><h5 style="text-align :center;"> Le prototype fonctionne correctement. </h5> </td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td><h5 style="text-align :center;"> Adapter l'impédance de l'antenne : </h5> <p style="margin-bottom: 1em;font-style: italic;">Pour bien recevoir notre signal, il faut que notre antenne ait une impédance de 50 ohm à 433 kHz. Sinon, le signal pourrait rebondir et nous perdrons l'information.</p> </td>
+			<td><h5 style="text-align :center;">C. Duvannaud<br>D. Cordeau<br>Analyseur spectrale</h5></td>
+			<td><a href="img/analyseur_reseau.jpg" target="_blank"> <h2> Résultats </h2> </a></td>		
+			<td><h5 style="text-align :center;"> Le prototype fonctionne correctement. </h5> </td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td><h5 style="text-align :center;"> Créer une liaison UART : </h5> <p style="margin-bottom: 1em;font-style: italic;">Il faut réfléchir aux bits de données et aux adresses. On a choisi de scinder les 10 bits de trame en 2 x 5 bits.</p> </td>
+			<td><h5 style="text-align :center;"> UART </h5></td>
+			<td><a href="docs/test_uart.pdf" target="_blank"> <h2> Tests </h2> </a></td>		
+			<td><h5 style="text-align :center;"> Le prototype fonctionne correctement. </h5> </td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
+			<td><h5 style="text-align :center;"> Afficher les mesures sur le STM32, via une nouvelle interface graphique : </h5> <p style="margin-bottom: 1em;font-style: italic;">Pour la réception, nous allons toujours afficher nos valeurs sur l’écran du STM32. Toutefois, le protocole de réception n'est plus le même et il faut l'adapter.</p> </td>
+			<td><h5 style="text-align :center;"> <a href="docs/STM32_TP4.pdf" target="_blank"> TP Timer </a> <br> <a href="docs/STM32_TP5.pdf" target="_blank"> TP CAN </a> </h5></td>
+			<td><a href="docs/SAEsemestre3.pdf" target="_blank"> <h2> Interface </h2> </a><a href="docs/SAEsemestre3.pdf" target="_blank"> <h2> Tests </h2> </a></td>		
+			<td><h5 style="text-align :center;"> Le prototype fonctionne correctement. </h5> </td></tr>
+		</tr>
+		</table>
+		
+		
+		</tr>
+		</table>
+	</div>
+
+	<br><br>
+
+	<div class="ligne"> <h3> Documents : <br>	</h3>
+		<table width="100%"> <tr>
+			<td style="width:25%"><a href="docs/EVALUATION_SAE4.pdf" target="_blank"> <h2> Consignes </h2> </a></td>
+			<td> <h5 width="80%" height="100%"> Lien vers les consignes du projet. </h5> </td>
+		</tr> </table>		
+	</div>
+
+
+
+
+		
+	<br><br><br><br>
+	
+	
+    
+    <address>Version en date du 11/06/2024 par Théo-Félix ADAM.</address>    
+   
+  </body>
+</html>
