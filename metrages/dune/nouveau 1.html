@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Voiture animée</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow-x: hidden;
+      background-color: #f5f5f5;
+    }
+
+    .voiture {
+      position: absolute;
+      bottom: 50px;
+      left: -200px; /* commence en dehors de l'écran */
+      width: 150px;
+      animation: drive 5s ease-out forwards; /* 1 fois uniquement */
+    }
+
+    @keyframes drive {
+      0%   { left: -200px; }
+      100% { left: 100vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Image de voiture -->
+  <img src="1388008-middle.png" alt="Voiture" class="voiture">
+
+  <!-- Contenu de la page -->
+  <div style="padding: 50px;">
+    <h1>Bienvenue sur ma page</h1>
+    <p>Voici une animation avec une voiture qui passe une fois.</p>
+  </div>
+
+</body>
+</html>

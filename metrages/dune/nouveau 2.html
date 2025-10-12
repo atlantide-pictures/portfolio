@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Voiture + son + fondu</title>
+  <style>
+    body, html {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+
+    .voiture {
+      position: absolute;
+      bottom: 50px;
+      left: -300px;
+      width: 300px;
+      animation: drive 5s linear forwards;
+      cursor: pointer;
+    }
+
+    @keyframes drive {
+      from { left: -300px; }
+      to { left: 100vw; }
+    }
+
+    .voiture.stop {
+      animation-play-state: paused;
+    }
+
+    .fondu-blanc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease;
+      z-index: 10;
+    }
+
+    .fondu-blanc.actif {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Image de la voiture -->
+  <img src="img/voiture.png" alt="Voiture" class="voiture" id="voiture">
+
+  <!-- Fondu blanc -->
+  <div class="fondu-blanc" id="fondu"></div>
+
+  <!-- Son au clic -->
+  <audio id="carSound" src="sons/klaxon.mp3" preload="auto"></audio>
+
+  <script>
+    const voiture = document.getElementById('voiture');
+    const fondu = document.getElementById('fondu');
+    const son = document.getElementById('carSound');
+
+    voiture.addEventListener('click', () => {
+      voiture.classList.add('stop');      // Stop animation
+      fondu.classList.add('actif');       // Active fondu blanc
+      son.currentTime = 0;                // Repart du début
+      son.play();                         // Joue le son
+    });
+  </script>
+
+</body>
+</html>

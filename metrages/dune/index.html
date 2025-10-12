@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <title>DUNE</title>
+  <link rel="icon" href="../../logo_atlantide.png" type="image/icon type">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+  
+  <style>
+    body {
+      overflow-x: hidden;
+		}
+	
+    .ver {
+      position: absolute;
+      bottom: -10px;
+      left: -200px; /* commence en dehors de l'écran */
+      width: 550px;
+      animation: drive 5s ease-out forwards; /* 1 fois uniquement */
+	  cursor: pointer;
+		}
+
+    @keyframes drive {
+      from { left: -300px; }
+      to { left: 100vw; }
+		}
+		
+	.ver.stop {
+      animation-play-state: paused;
+    }
+
+    .fondu-blanc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease;
+      z-index: 10;
+    }
+
+    .fondu-blanc.actif {
+      opacity: 1;
+    }
+	
+	.video-transition {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		object-fit: cover;
+		z-index: 9999;
+		display: none; /* Masqué au début */
+	}
+	
+	body.transition-active {
+		background-color: white;
+	}
+  </style
+
+
+
+  </head>
+  
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+	<ul class="navbar">
+		<li><a href="../../index.html"> Page principale </a>
+		<li><a href="../index.html"> Retour </a>
+		<li><a href="../../bac/index.html"> BAC </a>
+		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
+		<li><a href="../../but2/index.html"> BUT 2 - GEII </a>
+		<li><a href="../../but3/index.html"> BUT 3 - GEII </a>
+		<li><a href="../../but2rt/index.html"> BUT 2 - RT </a>
+	</ul>
+    
+    <div class="ligne">
+    <h1> DAVID LYNCH'S DUNE (1984) </h1>
+    </div>
+	
+	<!-- //////////////////////////////////////// VER //////////////////////////////////////// -->
+	
+	<!-- Image du ver -->
+	<img src="ver.png" alt="ver" class="ver" id="ver">
+	
+	<!-- Fondu blanc -->
+	<div class="fondu-blanc" id="fondu"></div>
+	<video id="getout" class="video-transition" src="getout.mp4" preload="auto"></video>
+	
+	<!-- Son au clic -->
+	<audio id="verSon" src="ver_son.mp3" preload="auto"></audio>
+	
+	<script>
+		const ver = document.getElementById('ver');
+		const fondu = document.getElementById('fondu');
+		const son = document.getElementById('verSon');
+		const video = document.getElementById('getout');
+
+		ver.addEventListener('click', () => {
+			ver.classList.add('stop');    		 // stoppe l'animation
+			fondu.classList.add('actif');      	// lance le fondu blanc
+			video.style.display = 'block';
+			son.currentTime = 0;                // Repart du début
+			son.play();                         // Joue le son
+			video.currentTime = 0;
+			video.play();
+			
+			// Redirection après 1,8 secondes (temps du fondu + sécurité)
+			setTimeout(() => {
+			window.location.href = "dormeur.html";}, 4000);
+		});
+	</script>
+	
+	<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+	
+	<br><br>
+
+    <div class="ligne">	
+		<a href="100107.jpg" data-lightbox="poster_dune" data-title="Affiche du film Dune (1)" >
+			<img src="100107.jpg" width="354" height="500" align="middle" margin-left=156  alt="Affiche du film Dune (1)"/>
+		</a>
+		<a href="dune.jpg"  style="max-height: 90vh;" data-lightbox="poster_dune" data-title="Affiche du film Dune (2)" >
+			<img src="dune.jpg" width="354" height="500" align="middle" margin-left=156  alt="Affiche du film Dune (2)"/>
+		</a>
+	</div>
+	
+    <div class="ligne">
+    <h3>Synopsis : <br>	</h3>
+	<p>
+	Dans un futur lointain, en l’an 10191 AG (Après la Guilde), l’Épice est la substance la plus convoitée de la galaxie. Permettant de voyager dans l’espace, cette matière ne se trouve qu'en un seul endroit : Arrakis. Cette planète des sables, également dénommée « Dune », est un monde aride et hostile presque entièrement recouvert d'un désert brûlant. Le duc Leto Atréides remplace ses ennemis, les Harkonnens, à la tête du fief d’Arrakis ; il part s’y installer avec sa concubine dame Jessica et leur fils Paul. Les membres de la Maison Atréides flairent un piège, tendu par le baron Vladimir Harkonnen, leur ennemi juré, mais doivent obéir à la volonté de l’empereur Padishah Shaddam IV. Peu après leur installation sur Dune, les Atréides sont trahis par le médecin personnel du duc Leto, le docteur Yueh, et décimés par une attaque conjointe des forces Harkonnen et des troupes d'élite de l’empereur. Paul et sa mère Jessica parviennent à fuir et se retrouvent parmi les seuls survivants de la Maison Atréides. Perdus en plein désert, ils y rencontrent les Fremen, le peuple indigène d’Arrakis qui est le véritable maître du désert. Les Fremen attendent la venue d’un messie qui les délivrera. Se pourrait-il que ce soit Paul ?	</h4>
+	</p>
+	</div>
+	
+	<br>
+	
+	<div class="ligne">
+    <h3>Musique du film : <br>	</h3>	
+	<p>Thème principal :</p><audio controls preload="auto" src="main.mp3"></audio>
+	<p>Thème de la prophétie :</p><audio controls preload="auto" src="prophecy.mp3" autoplay></audio> 
+	<p>Thème du désert :</p><audio controls preload="auto" src="desert.mp3"></audio> 
+	<p>Thème de Chani :</p><audio controls preload="auto" src="chani.mp3"></audio> 
+	<br>
+	</div>
+	
+	<br>
+	
+	<div class="ligne">
+    <h3>Bande annonce : <br>	</h3>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/04aw2ymZedw?si=4vG_699u9ACrx1fd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/pm7Lvg8iwTc?si=8FNpzrWF-i_x-4Eb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<br>
+	<iframe width="739" height="315" src="https://www.youtube.com/embed/sJ9VAJ1f0zU?si=i_KgDIgmTECFPRC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<iframe width="420" height="315" src="https://www.youtube.com/embed/2Y4RJ_ck90g?si=9lMCHi5iP1xZFpcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>	
+	</div>
+	
+	<br>
+	
+	<div class="ligne">
+    <h3>Fiche technique : <br>	</h3>
+	<p>
+	Réalisation : David Lynch / Alan Smithee (version TV)
+	<br>Scénario : David Lynch / Judas Booth (version TV), d'après le roman éponyme de Frank Herbert
+	<br>Musique : Toto, thème de la prophétie de Brian Eno
+	<br>Direction artistique : Pier Luigi Basile et Benjamín Fernández
+	<br>Photographie : Freddie Francis
+	<br>Montage : Antony Gibbs
+	<br>Production : Raffaella De Laurentiis
+	<br>Durée : 137 minutes / 188 minutes (version TV)
+	<br>Sociétés de production : Dino De Laurentiis Company
+	<br>Société de distribution : AMLF
+	<br>Distribution : Kyle MacLachlan (Paul Atréides / Usul / Muad'Dib), Sean Young (Chani), Francesca Annis (Dame Jessica), Patrick Stewart (Gurney Halleck), Sting (Feyd-Rautha), Virgina Madsen (Princesse Irulan), Jürgen Prochnow (Duc Leto), Brad Dourif (Piter de Vries), Max Von Sydow (Liet Kynes), Freddie Jones (Thufir Hawat), Linda Hunt (Shadout Mapes) et José Ferrer (Shaddam IV)
+    </p>
+	</div>
+
+    <div class="ligne"> <h3> Images du film : <br>	</h3> </a>
+	
+	<table width="100%">
+		<tr>
+			<td width=""><a href="Image8.jpg" data-lightbox="img_perso" data-title="Sting en Feyd-Rautha" width="100%"><img src="Image8.jpg" width="100%" alt="Sting en Feyd-Rautha"/></a></td>
+			<td width=""><a href="Image0.jpg" data-lightbox="img_perso" data-title="Virgina Madsen en Princesse Irulan" width="100%"><img src="Image0.jpg" width="100%" alt="Virgina Madsen en Princesse Irulan"/></a></td>
+			<td width=""><a href="Image14.jpg" data-lightbox="img_perso" data-title="Linda Hunt en Shadout Mapes" width="100%"><img src="Image14.jpg" width="100%" alt="Linda Hunt en Shadout Mapes"/></a></td>
+			<td width="40%" ROWSPAN="2"><h5> Les Personnages </h5> <p style="margin-left: 0.5em;"> Le film du film comporte une multitude de personnages, tous incarné par de grands acteurs. Le casting est extraordinaire. </p></td>
+		</tr>
+		<tr>
+			<td width=""><a href="Image19.jpg" data-lightbox="img_perso" data-title="Max Von Sydow en Liet Kynes" width="100%"><img src="Image19.jpg" width="100%" alt="Sting en Feyd-Rautha"/></a></td>
+			<td width=""><a href="Image51.jpg" data-lightbox="img_perso" data-title="Patrick Stewart en Gurney Halleck" width="100%"><img src="Image51.jpg" width="100%" alt="Virgina Madsen en Princesse Irulan"/></a></td>
+			<td width=""><a href="Image59.jpg" data-lightbox="img_perso" data-title="Alicia Witt en Alia Atréides" width="100%"><img src="Image59.jpg" width="100%" alt="Linda Hunt en Shadout Mapes"/></a></td>
+		</tr>
+	</table>
+	<a href="Image22.jpg" data-lightbox="img_perso" data-title="Kyle MacLachlan en Paul Atréides" style="display:none;"></a>
+	<a href="Image20.jpg" data-lightbox="img_perso" data-title="Caméo de David Lynch" style="display:none;"></a>
+	<a href="Image34.jpg" data-lightbox="img_perso" data-title="Francesca Annis en Dame Jessica" style="display:none;"></a>
+	<a href="Image30.jpg" data-lightbox="img_perso" data-title="Brad Dourif en Piter de Vries" style="display:none;"></a>
+	<table width="100%">
+		<tr>
+			<td width="40%" ROWSPAN="2"><h5> Les Éffets Spéciaux </h5> <p style="margin-right: 0.5em;"> Le film possède de très bon effets spéciaux pour certaines scènes, mais moins pour d'autres. D'autant plus que c'est triste quand on sait que David Lynch devait au début travailler avec un spécialiste des VFX qui comprennait la vision du réalisateur. Mais pour réduire le budget, le producteur n'a pas continuer la collaboration. </p></td>
+			<td width=""><a href="Image2.jpg" data-lightbox="img_sfx" data-title="La combinaison de combat" width="100%"><img src="Image2.jpg" width="100%" alt="La combinaison de combat"/></a></td>
+			<td width=""><a href="Image47.jpg" data-lightbox="img_sfx" data-title="Le ver de sable #1" width="100%"><img src="Image47.jpg" width="100%" alt="Le ver de sable #1"/></a></td>
+			<td width=""><a href="Image48.jpg" data-lightbox="img_sfx" data-title="Le ver de sable #2" width="100%"><img src="Image48.jpg" width="100%" alt="Le ver de sable #2"/></a></td>
+		</tr>
+		<tr>
+			<td width=""><a href="Image61.jpg" data-lightbox="img_sfx" data-title="Muad'Dib séparant le sol et Feyd-Rautha en deux" width="100%"><img src="Image61.jpg" width="100%" alt="Muad'Dib séparant le sol et Feyd-Rautha en deux"/></a></td>
+			<td width=""><a href="Image40.jpg" data-lightbox="img_sfx" data-title="Muad'Dib parlant aux Fremens" width="100%"><img src="Image40.jpg" width="100%" alt="Muad'Dib parlant aux Fremens"/></a></td>
+			<td width=""><a href="Image15.jpg" data-lightbox="img_sfx" data-title="Une des séquences de rêve" width="100%"><img src="Image15.jpg" width="100%" alt="Une des séquences de rêve"/></a></td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr>
+			<td width=""><a href="Image7.jpg" data-lightbox="img_decors" data-title="Sting en Feyd-Rautha" width="100%"><img src="Image7.jpg" width="100%" alt="Sting en Feyd-Rautha"/></a></td>
+			<td width=""><a href="Image6.jpg" data-lightbox="img_decors" data-title="Virgina Madsen en Princesse Irulan" width="100%"><img src="Image6.jpg" width="100%" alt="Virgina Madsen en Princesse Irulan"/></a></td>
+			<td width=""><a href="Image1.jpg" data-lightbox="img_decors" data-title="Linda Hunt en Shadout Mapes" width="100%"><img src="Image1.jpg" width="100%" alt="Linda Hunt en Shadout Mapes"/></a></td>
+			<td width="40%" ROWSPAN="2"><h5> Les Décors </h5> <p style="margin-left: 0.5em;"> Le film commence à Paris, où Emmanuelle, avant de partir pour Bangkok, se maquille devant un mirroir. A la fin du film, Mario veut découvrir une autre Emmanuelle, qu'Emmanuelle elle même ne connaît pas. Le film se finit sur une freeze frame de Sylvia Kristel se regardant dans le miroir. </p></td>
+		</tr>
+		<tr>
+			<td width=""><a href="Image9.jpg" data-lightbox="img_decors" data-title="Sting en Feyd-Rautha" width="100%"><img src="Image9.jpg" width="100%" alt="Sting en Feyd-Rautha"/></a></td>
+			<td width=""><a href="Image21.jpg" data-lightbox="img_decors" data-title="Virgina Madsen en Princesse Irulan" width="100%"><img src="Image21.jpg" width="100%" alt="Virgina Madsen en Princesse Irulan"/></a></td>
+			<td width=""><a href="Image58.jpg" data-lightbox="img_decors" data-title="Linda Hunt en Shadout Mapes" width="100%"><img src="Image58.jpg" width="100%" alt="Linda Hunt en Shadout Mapes"/></a></td>
+		</tr>
+	</table>
+
+
+	<br><br><br><br>
+	
+	
+	
+    <address>Version en date du 24/05/2025 par Théo-Félix ADAM.</address>    
+ 	
+	<!-- jQuery d'abord -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- Puis Lightbox -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js">
+		lightbox.option({
+			'fitImagesInViewport': true,
+			'maxWidth': 1200,
+			'maxHeight': 900,
+			'resizeDuration': 700,
+			'imageFadeDuration': 600,
+			'positionFromTop': 50
+		});
+
+	</script>
+    
+  </body>
+</html>
