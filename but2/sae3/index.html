@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <title> SAE 3</title>
+  <link rel="icon" href="logo_atlantide.png" type="image/icon type">
+  <link rel="stylesheet" href="../../style.css">
+
+  </head>
+  
+  <body>
+  
+	<ul class="navbar">
+		<li><a href="../../index.html">Page principale</a></li>
+		<li><a href="../index.html">Retour</a></li>
+		<li><a href="../../bac/index.html">BAC</a></li>
+		<li><a href="../../bts/index.html">BTS Electrotechnique</a></li>
+		<li><a href="../../but2/index.html">BUT 2 - GEII</a></li>
+		<li><a href="../../but3/index.html">BUT 3 - GEII</a></li>
+		<li><a href="../../but2rt/index.html">BUT 2 - RT</a></li>
+	</ul>
+    
+    <div class="ligne">
+		<h1>SAE 3 - Stylo Voltmètre p1</h1>
+    </div>
+	
+    <div class="ligne">
+		<h3>Récapitulatif :</h3>
+		<p>
+			La SAé ou Situation d’Apprentissage et d’évaluation est un ensemble constitué d’une ou plusieurs tâches à réaliser par l’étudiant, en vue d’atteindre le but fixé.
+		</p>
+		<p>
+			La SAE du semestre 3 vise à créer un stylo-voltmètre, capable de prendre une tension entre 0 et 15 Vdc. Un affichage déporté via une carte STM32 lié par
+			une liaison SPI (Serial Periphal Interface) est également mis en place. Pour la Conversion Analogique Numérique, nous avons utilisé le microcontrôleur maître : 
+			AtTiny85 (10 bits) ; mais aussi le CAN MCP3201 (12 bits).
+		</p>
+	</div>
+	
+	<br><br>
+
+    <div class="ligne"> <h3> Attendus SAE 3 : <br>	</h3>
+		<table width="100%">
+			<tr>
+				<td>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Référentiel</h2>
+					</a>					
+				</td>
+				<td style="background-image: url('banniere_but2.jpg');  background-size: cover; "width="80%" height="100%">
+					<p style="padding-left: 1em; padding-right: 1em">
+						Lien vers les attendus de l’Université.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<br><br>
+
+    <div class="ligne"> <h3> Description détaillée de la SAE 3 : <br>	</h3>
+		<table width="100%">
+			<tr>
+				<td style="width:80%">
+					<p style="padding-right: 1em">
+						L’objectif de la SAE 3 est de créer un stylo-voltmètre. Le maître est le microcontrôleur AtTiny85 qui peut s’occuper d’une conversion analogique numérique 8 ou 10 bits. Mais il va également nous servir à envoyer les données via le protocole SPI (Serial Peipheral Interface). Ce protocole nécessite l’utilisation d’un fil pour les données de sortie, un fil pour les données d’entrée, un fil d’horloge et x fils CS ou SS pour x esclaves. Les fils CS permettent au maître de dire à quel esclave il parle.
+					</p>
+				</td>
+				<td>
+					<a href="img/spi.jpg" data-lightbox="img_sae3" data-title="Protocole SPI" width="100%">
+						<img src="img/spi.jpg" width="100%" style="border-radius: 25% 10%;"/>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<a href="img/can.jpg" data-lightbox="img_sae3" data-title="Convertisseur Analogique vers Numérique (CAN) 12 bits, modèle MCP3201" width="100%">
+						<img src="img/can.jpg" width="100%" style="border-radius: 25% 10%;"/>
+					</a>
+				</td>
+				<td style="width:80%">
+					<p style="padding-left: 1em">
+						Pour la conversion analogique numérique, nous utilisons dans un premier temps le MCP3201, qui permet une conversion en 12 bits. Puis, nous utilisons le CAN de l’AtTiny85, puisque cela réduit le nombre de composant, la marge de place et le coût entre autres. Ce CAN est lui codé sur 8 ou 10 bits.
+					</p>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td style="width:80%">
+					<p style="padding-right: 1em">
+						La majeure partie de nos microcontrôleurs ont besoins d’une alimentation comprise entre 2,7 V et 5,5 V. Nous avons alors choisi d’utiliser une tension de 3,3 Vdc pour alimenter la carte. Il nous faut donc utiliser un régulateur 3,3 V qui sera le LP XX.
+					</p>
+				</td>
+				<td>
+					<a href="img/regul.jpg" data-lightbox="img_sae3" data-title="Régulateur de tension 3,3V." width="100%">
+						<img src="img/regul.jpg" width="100%" style="border-radius: 25% 10%;"/>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<a href="img/stm32f429.jpg" data-lightbox="img_sae3" data-title="Carte de développement STM32F429" width="100%">
+						<img src="img/stm32f429.jpg" width="100%" style="border-radius: 25% 10%;"/>
+					</a>
+				</td>
+				<td style="width:80%">
+					<p style="padding-left: 1em">
+						Parallèlement, nous avons codé une interface graphique sur le microcontrôleur STM32. Celui-ci est déjà intégré à une carte, avec un CAN MCP3201. Cela a pour but de nous aider à décoder les trames SPI du CAN et d’afficher ses valeurs sur l’écran.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<br><br>
+
+	<div class="ligne">
+		<h3>Activités de la SAE 3 :</h3>
+		<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#4a4a4a;">
+				<td style="width:30%;">
+					<h5 style="text-align :center;">
+						Activité réalisée
+					</h5>
+				</td>
+				<td style="width:20%">
+					<h5 style="text-align :center;">
+						Ressources utilisées
+					</h5>
+				</td>
+				<td style="width:20%;">
+					<h5 style="text-align :center;">
+						Traces / Résultats
+					</h5>
+				</td>
+				<td style="width:30%;">
+					<h5 style="text-align :center;">
+						Autoévaluation
+					</h5>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#808e41;">
+				<td>
+					<a href="composants/index.html">
+						<h5 style="text-align :center;">
+							Concevoir une carte de programmation pour l’AtTiny85
+						</h5>
+					</a>
+					<p style="margin-bottom: 1em; font-style: italic; margin-left: 1em">
+						Pour pouvoir programmer l’AtTiny85, il faut créer une carte pouvant recevoir le microcontrôleur, le câble USBASP, une alimentation 3,3V ou 5V…
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						Altium Designer
+						<br>Fer à souder
+					</p>
+				</td>
+				<td>
+					<a href="img/PCB_prog_attiny85.png" target="_blank">
+						<h2>Schémas</h2>
+					</a>
+					<a href="img/carte_prototype.jpg" target="_blank">
+						<h2>Carte</h2>
+					</a>
+				</td>		
+				<td>
+					<p style="text-align: center">&#128512</p>
+					<p style="margin-left: 1em; margin-right: 1em">
+						L’AtTiny85 est désormais programmable grâce à notre carte. 
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#764e75;">
+				<td>
+					<h5 style="text-align :center;">
+						Concevoir un prototype du stylo-voltmètre
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic; margin-left: 1em">
+						Avant d'imprimer une carte pour le stylo, il faut avant tout essayer nos programmes avec les composants (condensateur, résistors, régulateur...)
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						Altium Designer
+						<br>Fer à souder
+					</p>
+				</td>
+				<td>
+					<a href="img/prototype.png" target="_blank">
+						<h2>Schémas</h2>
+					</a>
+					<a href="img/carte_prototype.jpg" target="_blank">
+						<h2>Carte</h2>
+					</a>
+				</td>		
+				<td>
+					<p style="text-align: center">&#128512</p>
+					<p style="margin-left: 1em; margin-right: 1em">
+						Le prototype fonctionne correctement.
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#a19c1b;">
+				<td>
+					<h5 style="text-align :center;">
+						Programmer l’AtTiny85 : les CAN et la liaison SPI
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic;  margin-left: 1em">
+						L’AtTiny85 est le maître qui se charge de la réception des données du CAN et de l’envoi de données SPI.
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						<a href="docs/attiny85_datasheet.pdf"  target="_blank">AtTiny85 datasheet</a>
+						<br>CodeVisionAVR
+					</p>
+				</td>
+				<td>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Schémas</h2>
+					</a>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Carte</h2>
+					</a>
+				</td>		
+				<td>
+					<p style="margin-left: 1em; margin-right: 1em">
+						Le programme fonctionne correctement. Il manque peut-être une optimisation du code, car des variables sont inutiles. 
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#808e41;">
+				<td>
+					<h5 style="text-align :center;">
+						Utiliser le CAN MCP3201
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic;  margin-left: 1em">
+						Un des choix pour la CAN est d’utiliser le CAN 12 bits MCP3201.
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						<a href="docs/mcp3201_datasheet.pdf"  target="_blank">MCP3201 datasheet</a>
+						<br>CAN
+					</p>
+				</td>
+				<td>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Schémas</h2>
+					</a>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Carte</h2>
+					</a>
+				</td>		
+				<td>
+					<p style="margin-left: 1em; margin-right: 1em">
+						La conversion fonctionne correctement. Ce CAN est très simple d'utilisation.
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#764e75;">
+				<td>
+					<h5 style="text-align :center;">
+						Afficher les mesures sur le STM32, via une interface graphique et une CNA
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic; margin-left: 1em">
+						Pour la réception, nous allons afficher nos valeurs sur l’écran du STM32.
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						<a href="docs/STM32_TP4.pdf" target="_blank">TP Timer</a>
+						<br><a href="docs/STM32_TP5.pdf" target="_blank">TP CAN</a>
+					</p>
+				</td>
+				<td>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Interface</h2>
+					</a>
+					<a href="docs/SAEsemestre3.pdf" target="_blank">
+						<h2>Tests</h2>
+					</a>
+				</td>		
+				<td>
+					<p style="margin-left: 1em; margin-right: 1em">
+						L'affichage fait défaut et je ne m'en suis pas occupé, car je ne suis pas compétent avec ce processeur.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<br><br>
+
+	<div class="ligne">
+		<h3>Documents :</h3>
+		<table width="100%">
+			<tr>
+				<td style="width:25%">
+					<a href="docs/consignes.pdf" target="_blank">
+						<h2>Consignes</h2>
+					</a>
+				</td>
+				<td>
+					<h5 width="80%" height="100%">Lien vers les consignes du projet.</h5>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:25%">
+					<a href="docs/Présentation_Voltmètre.pdf" target="_blank">
+						<h2>Diaporama</h2>
+					</a>
+				</td>
+				<td>
+					<h5 width="80%" height="100%">Lien vers le diaporama de présentation du projet.</h5>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+
+
+	
+	<br><br><br><br>
+	
+	
+    
+    <address>Version en date du 11/10/2025 par Théo-Félix ADAM.</address>    
+   
+	<!-- Images flottantes -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+   
+  </body>
+</html>
