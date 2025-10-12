@@ -78,6 +78,41 @@ div.ligne h2:hover {
 
 
 
+/* BOUTON METRAGES */
+
+.bouton-metrages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  padding: 1em 3em;
+  background-color: #D9AE00;
+  color: #565656;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 5%;
+}
+
+.bouton-metrages:visited {
+  color: #565656;
+}
+
+.bouton-metrages:hover {
+  background-color: #565656;
+  color: #D9AE00;
+  text-shadow: 1px 1px 2px black;;
+  cursor: pointer;
+  box-shadow: 0 0 10px #fff, 0 0 20px #D9AE00, 0 0 40px #D9AE00;
+}
+
+
+
+/* SOMMAIRE */
+
 .sommaire li {
 	margin-top: 0.5em auto;
 	margin-bottom: 0.5em ;
@@ -163,7 +198,7 @@ div.ligne h2:hover {
 /* AFFICHAGE SUR LE PC */
 @media (min-width: 1300px) {
   .apropos img {
-    width: 50%;
+    width: 100%;
     max-width: 300px;
   }
 }
@@ -218,13 +253,13 @@ h2	{
 	margin-top: 0.5em;
 	margin-bottom: 0.5em ;
 	background-color: #D9AE00;
-    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+  font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
 	font-size:28;
 	color: #565656;
-    text-align: center;	
-    border:groove;
+  text-align: center;	
+  border:groove;
 	padding: 10px
-	}
+}
 		
 h3	{
 	font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
