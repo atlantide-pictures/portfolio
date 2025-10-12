@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <title> SAE 5 </title>
+  <link rel="icon" href="logo_atlantide.png" type="image/icon type">
+  <link rel="stylesheet" href="../style.css">
+
+  </head>
+  
+  <body>
+  
+	<ul class="navbar">
+		<li><a href="../../index.html"> Page principale </a>
+		<li><a href="../index.html"> Retour </a>
+		<li><a href="../../bac/index.html"> BAC </a>
+		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
+		<li><a href="../../but2/index.html"> BUT 2 </a>
+		<li><a href="../../metrages/index.html"> Métrages </a>
+	</ul>
+    
+    <div class="ligne">
+    <h1>SAE 5-6 - ESP32</h1>
+    </div>
+	
+    <div class="ligne">
+    <h3> Récapitulatif : <br>	</h3>
+	<h4>
+	La SAé ou Situation d’Apprentissage et d’évaluation est un ensemble constitué d’une ou plusieurs tâches à réaliser par l’étudiant, en vue d’atteindre le but fixé.
+	<br><br> En troisième année, notre objectifs est de prendre en main le microcontrôlleur ESP32. Nous avons le choix de nous pencher sur le Wifi, le Bluetooth, les bases de données... Mais, cela doit être également en rapport
+	avec la course de robots suiveurs de ligne.
+    <br><br> Le robot suiveur de ligne étant un projet porté par les premières années, où concourrent deux robots sur une piste. Le plus rapide des deux gagne la course.
+	</h4>
+	</div>
+	
+	<br><br>
+    
+	<div class="ligne"> <h3> Dossier complet SAE 5 : <br>	</h3>
+	<embed src="docs/rapport_sae5_v2.pdf" width="60%" height="800" type="application/pdf"/>
+	</div>
+	 
+	
+	 
+	<br><br>
+
+    <div class="ligne"> <h3> Attendus SAE 4 : <br>	</h3>
+		<table width="100%"> <tr>
+			<td>
+				<a href="docs/attendus.pdf" target="_blank"> <h2> Référentiel </h2> </a>					
+			</td>
+			<td style="background-image: url('banniere_but2.jpg');  background-size: cover; "width="80%" height="100%"> <h5 width="80%" height="100%"> Lien vers les attendus de l’Université. </h5> </td>
+		</tr> </table>
+	</div>
+
+	<br><br>
+	
+	
+	
+	
+	
+	<div class="ligne"> <h3> Activités de la SAE 5 : <br>	</h3>
+		<table width="100%" style="text-align :center;border-collapse: collapse; color: white">
+		<tr style="text-align :center;border-collapse: collapse; border-width:8px; border-style:solid; border-color:#1c7534; width:20%">
+			<td ><h5 style="text-align :center;text-shadow: 2px 2px 4px black;font-size: 2em ;margin-top: 0.5em;margin-bottom: 0.5em;">OBJECTIFS</h5></td></tr>
+		<tr style="text-align :center;border-collapse: collapse; border-bottom:1px; border-style:solid; border-color:black; width:20%;">
+			<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#4a4a4a;">
+			<td style="width:30%;"><h5 style="text-align :center;">Activité réalisée</h5></td>
+			<td style="width:20%"><h5 style="text-align :center;">Ressources utilisées</h5></td>
+			<td style="width:20%;"><h5 style="text-align :center;">Traces / Résultats</h5></td>
+			<td style="width:30%;"><h5 style="text-align :center;">Autoévaluation</h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#808e41;">
+			<td><a href="sp/01.html"><h2>Choix de l'IDE</h2></a> <p style="margin-bottom: 1em;font-style: italic;">Avant de programmer l'ESP32, il faut choisir un environnement.</p></td>
+			<td><h5 style="text-align :center;">  </h5></td>
+			<td><a href="docs/prog_sae5_led.ino" target="_blank"> </a></td>		
+			<td><p> &#128512 <br><br>Le portfolio est bien en ligne. Il fallait juste spécifier le fichier principal.</p></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#764e75;">
+			<td><a href="geo/01.html"><h2>Géolocalisation</h2></a> <p style="margin-bottom: 1em;font-style: italic;">Il est nécessaire de connaître le positionnement des robots sur la piste.</p></td>
+			<td><p>Wikipédia</p></td>
+			<td><a href="prog/prog_wifi_page_web_bp_v2_10.py" target="_blank"> <h2>Programme</h2> </a> <a href="img/plan_circuit_iut.png" target="_blank"><h2>Schéma du circuit</h2></a></td>		
+			<td><p> &#128512 <br><br>L'interface fonctionne, mais il faut l'ouvrir sur un navigateur.</p></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#4e5376;">
+			<td><a href="gui/01.html"><h2>Interface Graphique</h2></a> <p style="margin-bottom: 1em;font-style: italic;">Création d'une interface graphique (GUI) sous µPython pour connaître les données global de positionnement et des systèmes.</p></td>
+			<td><p>Python Doctor</p></td>
+			<td><a href="prog/prog_allumer_led_front_montant.py" target="_blank"> <h2>Programme</h2></a></td>		
+			<td><p> &#128512 <br><br>Le programme fonctionne correctement. En appuyant sur le bouton et en restant dessus, la LED s'allume. En relachant aussi. Ce n'est qu'en rappuyant dessus qu'elle s'éteint. Mais le bouton que je voulais faire via l'interface ne fonctionne pas. Il faut procéder autrement. </p> </td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#a19c1b;">
+			<td><a href="pf/01.html"><h2>Portfolio</h2></a><p style="margin-bottom: 1em;font-style: italic;">Le portfolio est un support important pour montrer nos capacités et avancements sur le projet.</p></td>
+			<td><p>MDN Web Docs</p></td>
+			<td><a href="prog/prog_allumer_led_front_montant.py" target="_blank"><h2>Programme</h2></a></td>		
+			<td><p> &#128512 <br><br>Le programme fonctionne correctement. En appuyant sur le bouton et en restant dessus, la LED s'allume. En relachant aussi. Ce n'est qu'en rappuyant dessus qu'elle s'éteint. Mais le bouton que je voulais faire via l'interface ne fonctionne pas. Il faut procéder autrement. </p> </td></tr>
+		</tr>
+		</table>
+		<table width="100%"> <tr>
+			<td style="width:25%"><a href="docs/calendrier_sae5.ods" target="_blank"> <h2> Calendrier </h2> </a></td>
+			<td> <h5 width="80%" height="100%"> Lien vers le calendrier du projet au format ODS. </h5> </td>
+		</tr> </table>
+		
+		</tr>
+		</table>
+	</div>
+
+	<br><br>
+	
+	<div class="ligne"><h3>Compétences des SAE 5-6 :<br></h3>
+		<table width="100%" style="text-align :center;border-collapse: collapse; color: white">
+		<tr>
+			<td><h5 style="text-align :center;text-shadow: 2px 2px 4px black;font-size: 2em ;margin-top: 0.5em;margin-bottom: 0.5em;"> Compétences de la SAE5 </h5></td></tr>
+		<tr style="text-align :center;border-collapse: collapse; border-bottom:1px; border-style:solid; border-color:black; width:20%;">
+			<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#4a4a4a;">
+			<td style="width:30%;"><h5 style="text-align :center;"> Tâche </h5></td>
+			<td style="width:14%;"><h5 style="text-align :center;"> Implanter </h5></td>
+			<td style="width:14%"><h5 style="text-align :center;"> Maintenir </h5></td>
+			<td style="width:14%;"><h5 style="text-align :center;"> Vérifier </h5></td>
+			<td style="width:14%;"><h5 style="text-align :center;"> Concevoir </h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#;">
+			<td><h5 style="text-align :center;">Choix de l'IDE</h5> <p style="margin-bottom: 1em;font-style: italic;">Savoir faire, savoir théorique, savoir être et savoir aimer.</p> </td>
+			<td><h5 style="text-align :center;">X</h5></td>
+			<td><h5 style="text-align :center;">-</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#;">
+			<td><h5 style="text-align :center;">Géolocalisation</h5> <p style="margin-bottom: 1em;font-style: italic;">Savoir faire, savoir théorique, savoir être et savoir aimer.</p> </td>
+			<td><h5 style="text-align :center;">X</h5></td>
+			<td><h5 style="text-align :center;">X</h5></td>		
+			<td><h5 style="text-align :center;">-</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#;">
+			<td><h5 style="text-align :center;">Interface Graphique</h5> <p style="margin-bottom: 1em;font-style: italic;">Savoir faire, savoir théorique, savoir être et savoir aimer.</p> </td>
+			<td><h5 style="text-align :center;">X</h5></td>
+			<td><h5 style="text-align :center;">X</h5></td>		
+			<td><h5 style="text-align :center;">-</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td></tr>
+		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#;">
+			<td><h5 style="text-align :center;">Portfolio</h5> <p style="margin-bottom: 1em;font-style: italic;">Savoir faire, savoir théorique, savoir être et savoir aimer.</p> </td>
+			<td><h5 style="text-align :center;">X</h5></td>
+			<td><h5 style="text-align :center;">X</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td>		
+			<td><h5 style="text-align :center;">X</h5></td></tr>
+		</tr>
+		</table>
+		</table>
+	</div>
+
+	<br><br>
+
+	<div class="ligne"> <h3> Documents : <br>	</h3>
+		<table width="100%"> <tr>
+			<td style="width:25%"><a href="docs/EVALUATION_SAE4.pdf" target="_blank"> <h2> Consignes </h2> </a></td>
+			<td> <h5 width="80%" height="100%"> Lien vers les consignes du projet. </h5> </td>
+		</tr> </table>		
+	</div>
+
+
+
+
+	
+	<br><br><br><br>
+	
+	
+    
+    <address> Version en date du 11/01/2025 par Théo-Félix ADAM. </address>    
+   
+  </body>
+</html>

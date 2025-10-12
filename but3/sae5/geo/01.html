@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+	<title>Géolocalisation</title>
+	<link rel="icon" href="../logo_atlantide.png" type="image/icon type">
+	<link rel="stylesheet" href="../../style.css">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+	</head>
+  
+  <body>
+  
+	<ul class="navbar">
+		<li><a href="../../../index.html"> Page principale </a>
+		<li><a href="../index.html"> Retour </a>
+		<li><a href="../../../bac/index.html"> BAC </a>
+		<li><a href="../../../bts/index.html"> BTS Electrotechnique </a>
+		<li><a href="../../../but2/index.html"> BUT 2 </a>
+		<li><a href="../../../metrages/index.html"> Métrages </a>
+	</ul>
+    
+    <div class="ligne">
+    <h1>Géolocalisation</h1>
+    </div>
+	
+    <div class="ligne">
+    <h3>Récapitulatif :<br></h3>
+	<h4>L'ESP32 peut être implémanté dans un système autonome, tel qu'un robot suiveur de ligne. Pour qu'il soit totalement autonome, il est nécessaire qu'il puisse s'avoir se situer dans l'espace. J'ai donc choisi de me
+	pencher sur la géolocalisation des robots suiveur de ligne.
+	<br><br>Il existe plusieurs système de géolocalisation. Le site <a href="https://rtone.fr/blog/geolocalisation/" target="blank">Rtone</a> nous donne quelques pistes : le GPS, le BLE, l'UWB, le WPS, le réseau cellulaire et le LoRaWAN.</h4>
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>GPS :<br></h3>
+	<h4>Selon <a href="https://rtone.fr/blog/geolocalisation/" target="blank">Wikipédia</a>, le GPS ou Global Positionnig System est
+	<br><br>Il existe plusieurs système de  donne quelques pistes : le GPS, le BLE, l'UWB, le WPS, le réseau cellulaire et le LoRaWAN.
+	</h4>
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>BLE :<br></h3>
+	<h4>Selonne quelques pistes : le GPS, le BLE, l'UWB, le WPS, le réseau cellulaire et le LoRaWAN.</h4>
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>WPS :<br></h3>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/UHp8HMrzTPE?si=CFReRrym9NdSTA-q&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<h4>Selon <a href="https://youtu.be/UHp8HMrzTPE?si=HmPPeJ6G0iZ-YL68" target="blank">BrickHouse Security</a>, le WPS ou Wifi Positionnig System est un système de géolocalisation se basant beaucoup sur le GPS. L'appareil n'a pas besoin de se connecter aux différents réseaux Wifi, il mesure juste
+	la puissance des signaux reçus des émetteurs. Il est alors capable de savoir à quelle distance se trouve l'émetteur. Par un système de trilatération, l'appareil peut connaître sa position par rapport aux émetteurs.
+	<br><br>Nous pouvons mettre en oeuvre ce système avec les ESP32.
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>Position sur la piste :<br></h3>
+	<img src="wps_circuit.png">
+	<h4><br>En utilisant Pythagore, j'ai trouvé les coordonnées du point A. Avec A(x ; y), α(0 ; 0) et β(L ; 0) comme points et L la longueur de la piste. Ce sera donc α l'origine de notre plan.
+	$$ {\alpha^{2} = x^{2} + y^{2} \leftrightarrow y^{2} = \alpha^{2} - x^{2}} $$ $$ {\beta^{2} = (L-x)^{2} + y^{2} = L^{2} + x^{2} - 2Lx + y^{2} = L^{2} + x^{2} - 2Lx + \alpha^{2} - x^{2} = L^{2} - 2Lx + \alpha^{2} \leftrightarrow 2Lx = L^{2} + \alpha^{2} - \beta^{2}} $$
+	</h4><h4 style="color: red;"> $$ {x = \frac{{L^{2} + \alpha^{2} - \beta^{2}}}{2L} } $$ $$ y = \sqrt{\alpha^{2} - x^{2}} $$ </h4>
+	<h4>Maintenant que nous avons ces formules pour connaître la position de A, il faut réfléchir à qui est l'émetteur et qui est le récepteur.
+	</h4>
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>Tests pratique entre deux ESP 32 :<br></h3>
+	<h4><br>J'ai utilisé un ESP32 qui sert de serveur wifi pour émettre et un autre ESP32 qui va se connecter au wifi du premier. Ce dernier va calculer la distance via le RSSI. J'ai alors obtenu les résultats suivant :
+	</h4>
+	<img src="courbe_rssi_esp32.png">
+	<h4>Au début, les points sont cohérents, mais à partir de 1,7 m, les puissances pratiques sont beaucoup trop faibles comparées à la théorie. J'ai donc changé d'émetteur en remplaçant l'ESP32 par un téléphone.</h4>
+	</div>
+	
+	<br><br>
+	
+	<div class="ligne">
+    <h3>Tests pratique entre un ESP 32 et un téléphone :<br></h3>
+	<h4><br>J'ai utilisé mon téléphone qui sert de serveur wifi via un partage de connexion pour émettre et un ESP32 qui va se connecter au wifi du premier. J'ai obtenu les résultats suivant :
+	</h4>
+	<img src="courbe_rssi_telephone.png">
+	<h4>Globalement, la courbe pratique suit la courbe théorique. Toutefois, il semble y avoir des rebons du côté de la pratique. Quelque fois la valeur est en dessous de celle souhaitée, d'autres fois elle est en dessus. Je pense que cela peut-être
+	dû au fait qu'il n'est pas possible de connaître le point d'émission et de réception des antennes. En effet, seul les antennes isotropiques peuvent émettre théoriquement dans tous les sens à la même intensité. Mais dans la plupart des cas, l'antenne
+	émet beaucoup plus dans une direction que d'autre. Sauf qu'il n'est pas possible pour moi de savoir ce point d'intensité maximale.</h4>
+	</div>
+	
+	<br><br>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<h3> Temps alloué : </h3>
+
+
+
+
+	
+	<br><br><br><br>
+	
+	
+    
+    <address> Version en date du 16/02/2025 par Théo-Félix ADAM. </address>    
+   
+  </body>
+</html>
