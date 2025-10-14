@@ -87,7 +87,7 @@ div.ligne h2:hover {
   width: 15%;
   padding: 1em 3em;
   background-color: #D9AE00;
-  color: #565656;
+  color: white; /*#565656*/
   text-decoration: none;
   border: 1px solid #ccc;
   font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
@@ -98,11 +98,11 @@ div.ligne h2:hover {
 }
 
 .bouton-metrages:visited {
-  color: #565656;
+  color: white; /*#565656*/
 }
 
 .bouton-metrages:hover {
-  background-color: #565656;
+  background-color: #D9AE00;
   color: #D9AE00;
   text-shadow: 1px 1px 2px black;;
   cursor: pointer;
