@@ -23,6 +23,24 @@
       0%   { left: -200px; }
       100% { left: 100vw; }
 		}
+		
+	.video-fond {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1; /* derrière le contenu */
+    }
+
+    /* Contenu au-dessus de la vidéo */
+    .contenu {
+      position: relative;
+      z-index: 1;
+      padding: 50px;
+      text-align: center;
+    }
   </style>
 
   </head>
@@ -39,94 +57,81 @@
     window.addEventListener('click', () => {
     audio.muted = false;
     audio.play();
-	});
+  });
 	</script>
 
 
 	<ul class="navbar">
 		<li><a href="../../index.html"> Page principale </a>
-		<li><a href="../index.html"> Retour </a>
+		<li><a href="index.html"> Retour </a>
 		<li><a href="../../bac/index.html"> BAC </a>
 		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
-		<li><a href="../../but2/index.html"> BUT 2 - GEII </a>
-		<li><a href="../../but3/index.html"> BUT 3 - GEII </a>
-		<li><a href="../../but2rt/index.html"> BUT 2 - RT </a>
+		<li><a href="../../but2/index.html"> BUT 2 </a>
+		<li><a href="../../but3/index.html"> BUT 3 </a>
 	</ul>
 
+
+	<!-- Vidéo de fond -->
+	<video class="video-fond" autoplay muted loop playsinline>
+    <source src="dune_reve.mp4" type="video/mp4">
+    Ton navigateur ne supporte pas la vidéo HTML5.
+	</video>
+
+	
     <div class="ligne">
-		<h1>LE DORMEUR DOIT SE RÉVEILLER</h1>
+    <h1> LE DORMEUR DOIT SE RÉVEILLER </h1>
     </div>
 	
 	<br><br>
+
 	
     <div class="ligne">
-		<h3>THE SLEEPER MUST AWAKEN :</h3>
-		<p>
-			Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le réveiller doit se dormeur. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur se réveiller doit. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. 
-		</p>
+    <h3> THE SLEEPER MUST AWAKEN : <br>	</h3>
+	<p>
+	Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur se réveiller doit. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. Le dormeur doit se réveiller. 
+	</p>
 	</div>
 	
 	<br>
 	
 	<div class="ligne">
-		<h3>I MUSN'T FEAR, FEAR IS THE MIND KILLER :</h3>	
-		<p>Thème du dormeur :</p>
-			<audio controls preload="auto" src="prophecy.mp3"></audio>
-		<p>Thème de dormeur :</p>
-			<audio controls preload="auto" src="prophecy.mp3" autoplay></audio> 
-		<p>Thème du dormeur :</p>
-			<audio controls preload="auto" src="prophecy.mp3"></audio> 
-		<p>Thème de dormeur :</p>
-			<audio controls preload="auto" src="prophecy.mp3"></audio> 
+    <h3> I MUSN'T FEAR, FEAR IS THE MIND KILLER : <br>	</h3>	
+	<p>Thème du dormeur :</p><audio controls preload="auto" src="prophecy.mp3"></audio>
+	<p>Thème de dormeur :</p><audio controls preload="auto" src="prophecy.mp3" autoplay></audio> 
+	<p>Thème du dormeur :</p><audio controls preload="auto" src="prophecy.mp3"></audio> 
+	<p>Thème de dormeur :</p><audio controls preload="auto" src="prophecy.mp3"></audio> 
 	<br>
 	</div>
 	
 	<br>
 	
 	<div class="ligne">
-		<h3> HE WHO CONTROLS THE SPICE, CONTROLS THE UNIVERSE :</h3>	
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://player.vimeo.com/video/1127100875?autoplay=1&muted=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://player.vimeo.com/video/1127100875?muted=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h3> HE WHO CONTROLS THE SPICE, CONTROLS THE UNIVERSE : <br>	</h3>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lDfetq3DGtw?si=hxSM23zPeXMqBqOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 	</div>
 	
 	<br>
 	
 
-    <div class="ligne">
-		<h3> GET OUT OF MY HEAD :</h3>
-		<table width="100%">
-			<tr>
-				<a href="Image56.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image56.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-				<a href="Image57.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image57.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER
-				</a>
-				<a href="Image12.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image12.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-				<a href="Image17.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image17.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-			</tr>
-			<tr>
-				<a href="Image32.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image32.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-				<a href="Image10.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image10.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-				<a href="Image4.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image4.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-				<a href="Image33.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" >
-					<img src="Image33.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/>
-				</a>
-			</tr>
-		</table>
-	</div>
+    <div class="ligne"> <h3> GET OUT OF MY HEAD : <br>	</h3> </a>
+	
+	<table width="100%">
+		<tr>
+			<a href="Image56.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image56.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image57.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image57.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image12.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image12.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image17.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image17.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+		</tr>
+		<tr>
+			<a href="Image32.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image32.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image10.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image10.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image4.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image4.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+			<a href="Image33.jpg" data-lightbox="poster_dune" data-title="LE DORMEUR DOIT SE RÉVEILLER" ><img src="Image33.jpg" width="354" height="500" align="middle" margin-left=156  alt="LE DORMEUR DOIT SE RÉVEILLER"/></a>
+		</tr>
+	</table>
 
 
 
@@ -134,10 +139,12 @@
 	
 	
 	
-    <address>Version en date du 14/10/2025 par Théo-Félix ADAM.</address>    
+    <address>Version en date du 24/05/2025 par Théo-Félix ADAM.</address>    
  	
-	<!-- Images flottantes -->
+	<!-- jQuery d'abord -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- Puis Lightbox -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     
   </body>
