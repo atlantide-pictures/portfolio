@@ -34,12 +34,20 @@ ul.navbar a {
 	}
 
 a:link {
-	color: white;
+	color: orange;
 	text-decoration: none
+	}
+
+a:hover {
+		color: white;
 	}
 
 a:visited {
 	color: purple
+	}
+
+a:visited:hover {
+	color: white
 	}
 	
 ul.navbar li a:hover {
