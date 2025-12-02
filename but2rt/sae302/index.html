@@ -11,12 +11,13 @@
   <body>
   
 	<ul class="navbar">
-		<li><a href="../../../index.html"> Page principale </a>
+		<li><a href="../../index.html"> Page principale </a>
 		<li><a href="../index.html"> Retour </a>
-		<li><a href="../../../bac/index.html"> BAC </a>
-		<li><a href="../../../bts/index.html"> BTS Electrotechnique </a>
-		<li><a href="../../../but2/index.html"> BUT 2 </a>
-		<li><a href="../../../metrages/index.html"> Métrages </a>
+		<li><a href="../../bac/index.html"> BAC </a>
+		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
+		<li><a href="../../but2/index.html"> BUT 2 - GEII </a>
+		<li><a href="../../but2/index.html"> BUT 3 - GEII </a>
+		<li><a href="../../metrages/index.html"> Métrages </a>
 	</ul>
     
     <div class="ligne">
@@ -24,23 +25,30 @@
     </div>
 	
     <div class="ligne">
-		<h3>Récapitulatif :<br></h3>
+		<h3>Récapitulatif :</h3>
 		<p>
 			L'ESP32 peut être implémanté dans un système autonome, tel qu'un robot suiveur de ligne. Pour qu'il soit totalement autonome, il est nécessaire qu'il puisse s'avoir se situer dans l'espace. J'ai donc choisi de me
 			pencher sur la géolocalisation des robots suiveur de ligne.
 		</p>
+		<table width="15%">
+			<td>
+				<a href="docs/sujet.pdf" target="blank"> 
+					<h2>Sujet</h2>
+				</a>
+			</td>
+		</table>
 		<p>
 			Je me suis intéressé à différents algorithmes de cryptographie.
 		</p>
 	</div>
 	
 	<div class="ligne">
-		<h3>RSA :<br></h3>
+		<h3>RSA :</h3>
 		<p>
 			Il nous a été demandé d'utiliser un chiffrement asymétrique. Dans un premier temps, j'ai choisi d'utiliser un chiffrement RSA ou Rivest Shamir Adleman.	
 		</p>
 		<p>
-			Les clés sont définis comme : \( \quad {K_m = [p,q,d]} \quad \) et \( \quad K_p = [n,e] \quad \)
+			Les clés sont définis comme : <span style="color: salmon;">\( \quad {K_m = [p,q,d]} \quad \)</span> et <span style="color: salmon;">\( \quad K_p = [n,e] \quad \)</span>
 		</p>
 		<p>
 			avec \( \quad n = p \times q \) \( \quad \phi (n) = (p-1)(q-1) \) \( \quad eu + \phi(n) v = 1 \) \( \quad d = u \: mod (\phi(n)) \)
@@ -52,20 +60,43 @@
 	</div>
 	
 	<div class="ligne">
-		<h3>Echanges de Diffie-Hellman :<br></h3>
+		<h3>ECDSA :</h3>
+		<h4 style="text-indent: 2em;">1. Courbes Elliptiques</h4>
 		<p>
-			Pour échanger echanger des messages, j'ai choisi d'utiliser Diffie-Hellman.
+			Si RSA travaillait sur des nombres réels, en cryptographie, pour encore en plus sécuriser les clés, il est possible d'utiliser les courbes elliptiques. Si vous n'êtes pas familiés avec les courbes elliptiques, je vous conseille de regarder la vidéo ci-dessous de <a href="https://www.youtube.com/@ElJj" target="blank">El Jj</a>, qui aborde ce sujet, ainsi qu'un des sept problèmes du millénaire.
+		</p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/NEVapv8c-SM?si=f-wt5w1crzJLClTd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<h4 style="text-indent: 2em;">2. Génération des clés</h4>
+		<p>
+			Les clés sont définis comme : <span style="color: salmon;">\( \quad {K_{privée} \in [1;n[} \quad \)</span> et <span style="color: salmon;">\( \quad K_{publique} = {K_{privée}} G (x,y) \)</span>
 		</p>
 		<p>
-			Les clés sont définis comme : \( \quad {K_m = K_m} \quad \) et \( \quad K_p = g^{Km} mod (p) \)
+			La clé privée est choisie aléatoirement. La clé publique équivaut à la clé privée que multiplie un point générateur G(x,y). La clé privée n'est rien d'autre qu'un très grand nombre, avec plusieurs dizaines de chiffres.
+			Le problème est que l'appareil doit multiplier le point générateur beaucoup trop de fois, ce qui prendrait un temps très long. La solution est d'utiliser l'algorithme <a href="https://urlr.me/qeCBnP" target="blank">Double and Add</a>.
+		</p>
+		<h4 style="text-indent: 2em;">3. SECP256R1</h4>
+		<p>
+			Les paramètres de SECP256R1 sont donnés par le <a href="https://www.secg.org/sec2-v2.pdf" target="blank">Standards for Efficient Cryptography Group</a>.
+		</p>
+		<p>
+			La courbe a une sécurité de <span style="color: salmon;">\( \quad \sqrt {{ \pi n sec256r1 } \over 4 } \simeq 127,8 \quad \)</span> et un ordre d'automorphisme de 2.
 		</p>
 	</div>
 	
 	<div class="ligne">
+		<h3>Echanges de Diffie-Hellman :</h3>
+		<p>
+			Pour échanger echanger des messages, j'ai choisi d'utiliser Diffie-Hellman.
+		</p>
+		<p>
+			Les clés sont définis comme : <span style="color: salmon;">\( \quad {K_m \in [0, p-1]} \quad \)</span> et <span style="color: salmon;">\( \quad K_p = g^{Km} mod (p) \)</span>
+		</p>
+	</div>
+		
+	<div class="ligne">
 		<h3>Temps alloué :</h3>
 		<p>26,25 heures encadrées + 39,5 heures d'autonomie, soit 75,75 heures totales de projet.</p>
 	</div>
-
 
 
 	
@@ -73,7 +104,7 @@
 	
 	
     
-    <address> Version en date du 30/11/2025 par Théo-Félix ADAM. </address>    
+    <address> Version en date du 02/12/2025 par Théo-Félix ADAM. </address>    
    
   </body>
 </html>
