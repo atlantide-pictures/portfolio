@@ -2,8 +2,8 @@
 <html>
   <head>
   <title> SAE 4</title>
-  <link rel="icon" href="logo_atlantide.png" type="image/icon type">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../../logo_atlantide.png" type="image/icon type">
+  <link rel="stylesheet" href="../../style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 
   </head>
@@ -20,64 +20,96 @@
 	</ul>
     
     <div class="ligne">
-    <h1>SAE 4 - Stylo Voltmètre p2</h1>
+		<h1>SAE 4 - Stylo Voltmètre p2</h1>
     </div>
 	
     <div class="ligne">
-    <h3>Récapitulatif : <br>	</h3>
-	<h4>
-	La SAé ou Situation d’Apprentissage et d’évaluation est un ensemble constitué d’une ou plusieurs tâches à réaliser par l’étudiant, en vue d’atteindre le but fixé.
-	<br><br> La SAE du semestre 4 vise à continuer la création du stylo-voltmètre, capable de prendre une tension entre 0 et 15 Vdc. Un affichage déporté via une carte STM32 lié par
-	une liaison UART (Universal Asynchronous Receiver / Transmitter) est également mis en place. Pour la Conversion Analogique Numérique, nous utilisons le microcontrôleur maître AtTiny85 (10 bits).
-    </h4>
+		<h3>Récapitulatif :</h3>
+		<p>
+			La SAé ou Situation d’Apprentissage et d’évaluation est un ensemble constitué d’une ou plusieurs tâches à réaliser par l’étudiant, en vue d’atteindre le but fixé.
+		</p>
+		<p>
+			La SAE du semestre 4 vise à continuer la création du stylo-voltmètre, capable de prendre une tension entre 0 et 15 Vdc. Un affichage déporté via une carte STM32 lié par
+			une liaison UART (Universal Asynchronous Receiver / Transmitter) est également mis en place. Pour la Conversion Analogique Numérique, nous utilisons le microcontrôleur maître AtTiny85 (10 bits).
+		</p>
 	</div>
-	
-	<br><br>
     
-	<div class="ligne"> <h3> Dossier complet SAE : <br>	</h3>
-	<embed src="docs/rapport_sae_v4.pdf" width="60%" height="800" type="application/pdf"/>
-	</div>
-	 
-	
-	 
-	<br><br>
-
-    <div class="ligne"> <h3> Attendus SAE 4 : <br>	</h3>
-		<table width="100%"> <tr>
-			<td>
-				<a href="docs/attendus.pdf" target="_blank"> <h2> Référentiel </h2> </a>					
-			</td>
-			<td style="background-image: url('banniere_but2.jpg');  background-size: cover; "width="80%" height="100%"> <h5 width="80%" height="100%"> Lien vers les attendus de l’Université. </h5> </td>
-		</tr> </table>
+	<div class="ligne">
+		<h3>Dossier complet SAE :</h3>
+		<embed src="docs/rapport_sae_v4.pdf" width="60%" height="800" type="application/pdf"/>
 	</div>
 
-	<br><br>
-
-    <div class="ligne"> <h3> Description détaillée de la SAE 4 : <br>	</h3>
-	<table width="100%">
-		<tr><td style="width:80%"><h4> L’objectif de la SAE 4 est de créer un stylo-voltmètre. Le maître est le microcontrôleur AtTiny85 qui peut s’occuper d’une conversion analogique numérique 10 bits. Mais il va également nous servir à envoyer les données via le protocole UART (Universal Asynchronous Receiver / Transmitter). Ce protocole nécessite l’utilisation d’un fil pour les données, comprenant l'adresse, le poids, un mot binaire, une parité et un bit de stop. </h4></td><td> <img src="img/uart.jpg" width="100%" style="border-radius: 25% 10%;"/> </td></tr>
-	</table>
-	<table width="100%">
-		<tr><td> <img src="img/can2.jpg" width="100%" style="border-radius: 25% 10%;"/> </td><td style="width:80%"><h4> Pour la conversion analogique numérique, nous utilisons le CAN de l’AtTiny85. Ce CAN est codé sur 10 bits. L'avantage de ce convertisseur est qu'il est déjà intégré au microprocesseur principale. Il n'est donc pas nécessite d'en ajouter un. </h4></td></tr>
-	</table>
-	<table width="100%">
-		<tr><td style="width:80%"><h4> La majeure partie de nos microcontrôleurs ont besoins d’une alimentation comprise entre 2,7 V et 5,5 V. Nous avons alors choisi d’utiliser une tension de 3,3 Vdc pour alimenter la carte. Il nous faut donc utiliser un régulateur 3,3 V qui sera le LP XX. </h4></td><td> <img src="img/regul.jpg" width="100%" style="border-radius: 25% 10%;"/> </td></tr>
-	</table>
-	<table width="100%">
-		<tr><td> <img src="img/stm32f429.jpg" width="100%" style="border-radius: 25% 10%;"/> </td><td style="width:80%"><h4> Parallèlement, nous avons codé une interface graphique sur le microcontrôleur STM32. Cela a pour but de nous aider à décoder les trames UART du CAN et d’afficher ses valeurs sur l’écran. </h4></td></tr>
-	</table>
+    <div class="ligne">
+		<h3>Attendus de l'Université :</h3>
+		<table width="100%">
+			<tr>
+				<td>
+					<a href="docs/attendus.pdf" target="_blank">
+						<h2>Référentiel</h2>
+					</a>					
+				</td>
+			</tr>
+		</table>
 	</div>
 
-	<br><br>
+    <div class="ligne">
+		<h3>Description détaillée de la SAE 4 :</h3>
+		<table width="100%">
+			<tr>
+				<td style="width:80%">
+					<p>L’objectif de la SAE 4 est de créer un stylo-voltmètre. Le maître est le microcontrôleur AtTiny85 qui peut s’occuper d’une conversion analogique numérique 10 bits. Mais il va également nous servir à envoyer les données via le protocole UART (Universal Asynchronous Receiver / Transmitter). Ce protocole nécessite l’utilisation d’un fil pour les données, comprenant l'adresse, le poids, un mot binaire, une parité et un bit de stop.</p>
+				</td>
+				<td>
+					<img src="img/uart.jpg" width="100%" style="border-radius: 25% 10%;"/>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<img src="img/can2.jpg" width="100%" style="border-radius: 25% 10%;"/>
+				</td>
+				<td style="width:80%">
+					<p>Pour la conversion analogique numérique, nous utilisons le CAN de l’AtTiny85. Ce CAN est codé sur 10 bits. L'avantage de ce convertisseur est qu'il est déjà intégré au microprocesseur principale. Il n'est donc pas nécessite d'en ajouter un.</p>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td style="width:80%">
+					<p>La majeure partie de nos microcontrôleurs ont besoins d’une alimentation comprise entre 2,7 V et 5,5 V. Nous avons alors choisi d’utiliser une tension de 3,3 Vdc pour alimenter la carte. Il nous faut donc utiliser un régulateur 3,3 V qui sera le LP XX.</p>
+				</td>
+				<td>
+					<img src="img/regul.jpg" width="100%" style="border-radius: 25% 10%;"/>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<img src="img/stm32f429.jpg" width="100%" style="border-radius: 25% 10%;"/>
+				</td>
+				<td style="width:80%">
+					<p>Parallèlement, nous avons codé une interface graphique sur le microcontrôleur STM32. Cela a pour but de nous aider à décoder les trames UART du CAN et d’afficher ses valeurs sur l’écran.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
 
 	<div class="ligne"> <h3> Table des compétences : <br>	</h3>
 		<table width="100%" style="text-align :center;border-collapse: collapse;">
-		<tr style="text-align :center;border-collapse: collapse; border-width:8px; border-style:solid; border-color:black; width:20%">
-			<td ><h5 style="text-align :center;text-shadow: 2px 2px 4px black;font-size: 2em ;margin-top: 0.5em;margin-bottom: 0.5em;">Création du stylo-voltmètre</h5></td></tr>
-		<tr>
-			<td><h5 style="text-align :center;">Objectifs</h5></td></tr>
-		<tr style="text-align :center;border-collapse: collapse; border-bottom:1px; border-style:solid; border-color:black; width:20%">
-			<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+			<tr style="text-align :center;border-collapse: collapse; border-width:8px; border-style:solid; border-color:black; width:20%">
+				<td>
+					<h5 style="text-align :center;text-shadow: 2px 2px 4px black;font-size: 2em ;margin-top: 0.5em;margin-bottom: 0.5em;">Création du stylo-voltmètre</h5>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h5 style="text-align :center;">Objectifs</h5>
+				</td>
+			</tr>
+			<tr style="text-align :center;border-collapse: collapse; border-bottom:1px; border-style:solid; border-color:black; width:20%">
+				<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
 		<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;">
 			<td style="width:30%;"><h5 style="text-align :center;">Tâche réalisée</h5></td>
 			<td style="width:20%"><h5 style="text-align :center;">Ressource utilisée</h5></td>
@@ -108,32 +140,34 @@
 			<td><h5 style="text-align :center;"> <a href="docs/STM32_TP4.pdf" target="_blank"> TP Timer </a> <br> <a href="docs/STM32_TP5.pdf" target="_blank"> TP CAN </a> </h5></td>
 			<td><a href="docs/SAEsemestre3.pdf" target="_blank"> <h2> Interface </h2> </a><a href="docs/SAEsemestre3.pdf" target="_blank"> <h2> Tests </h2> </a></td>		
 			<td><h5 style="text-align :center;"> Le prototype fonctionne correctement. </h5> </td></tr>
-		</tr>
-		</table>
-		
-		
-		</tr>
+				</table>
+			</tr>
 		</table>
 	</div>
 
-	<br><br>
-
-	<div class="ligne"> <h3> Documents : <br>	</h3>
-		<table width="100%"> <tr>
-			<td style="width:25%"><a href="docs/EVALUATION_SAE4.pdf" target="_blank"> <h2> Consignes </h2> </a></td>
-			<td> <h5 width="80%" height="100%"> Lien vers les consignes du projet. </h5> </td>
-		</tr> </table>		
+	<div class="ligne">
+		<h3>Documents :</h3>
+		<table width="100%">
+			<tr>
+				<td style="width:25%">
+					<a href="docs/EVALUATION_SAE4.pdf" target="_blank">
+						<h2>Consignes</h2>
+					</a>
+				</td>
+				<td>
+					<h5 width="80%" height="100%">Lien vers les consignes du projet.</h5>
+				</td>
+			</tr>
+		</table>		
 	</div>
 
 
 
-
-		
 	<br><br><br><br>
 	
 	
     
-    <address>Version en date du 11/06/2024 par Théo-Félix ADAM.</address>    
+    <address>Version en date du 01/01/2026 par Théo-Félix ADAM.</address>    
    
   </body>
 </html>
