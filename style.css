@@ -105,13 +105,25 @@ div.ligne h2:hover {
   margin-left: 5%;
 }
 
-.bouton-metrages:visited {
+.bouton-metrages:link {
   color: white; /*#565656*/
+}
+
+.bouton-metrages:link:hover {
+  color: #ADADAD; /*#565656*/
+}
+
+.bouton-metrages:visited {
+  color: #FFEDAD; /*#565656*/
+}
+
+.bouton-metrages:visited:hover {
+  color: #ADADAD; /*#565656*/
 }
 
 .bouton-metrages:hover {
   background-color: #D9AE00;
-  color: #D9AE00;
+  color: #ADADAD;
   text-shadow: 1px 1px 2px black;;
   cursor: pointer;
   box-shadow: 0 0 10px #fff, 0 0 20px #D9AE00, 0 0 40px #D9AE00;
