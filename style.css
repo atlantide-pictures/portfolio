@@ -257,7 +257,7 @@ div.ligne h2:hover {
 p{
 	text-align: justify;
 	font-size: 1.2em ;
-  margin-right: 15em;
+  	/*margin-right: 15em;*/
 	}
 
 h1 {
@@ -339,7 +339,7 @@ address {
 	margin-top: 1em;
 	padding-top: 1em;
 	border-top: thin dotted;
-  margin-right: 15em;
+ 	/*margin-right: 15em;*/
 	}
 
 niv1{
