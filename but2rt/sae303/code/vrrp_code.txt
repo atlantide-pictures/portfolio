@@ -1,0 +1,22 @@
+R02(config)# int e0/0
+R02(config-if)# duplex full
+R02(config-if)# no shutdown
+R02(config-if)# exit
+R02(config)# int e0/0.10
+R02(config-subif)# encapsulation dot1q 10
+R02(config-subif)# ip address 10.242.110.98 255.255.255.0
+R02(config-subif)# vrrp 1 ip 10.242.110.100
+R02(config-subif)# vrrp 1 priority 120
+R02(config-subif)# exit
+R02(config)# int e0/0.20
+R02(config-subif)# encapsulation dot1q 20
+R02(config-subif)# ip address 10.242.120.98 255.255.255.0
+R02(config-subif)# vrrp 2 ip 10.242.120.100
+R02(config-subif)# vrrp 2 priority 120
+R02(config-subif)# exit
+R02(config)# int e0/0.30
+R02(config-subif)# encapsulation dot1q 30
+R02(config-subif)# ip address 10.242.130.98 255.255.255.0
+R02(config-subif)# vrrp 3 ip 10.242.130.100
+R02(config-subif)# vrrp 3 priority 120
+R02(config-subif)# exit

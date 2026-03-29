@@ -1,6 +1,6 @@
 body {
-	padding-left: 18em;
-	padding-right: 2em;
+	padding-left: 20em;
+	padding-right: 15em;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: white;
 	background-color: #565656 }
@@ -265,7 +265,7 @@ h1 {
 	margin-bottom: 0.2em ;
 	margin-left: 1.3em;
 	color: #D9AE00;
-	font-size: 4.5em;
+	font-size: 4em;
     font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif ;
 	text-shadow: 5px 5px 5px black;
 	}
@@ -370,7 +370,10 @@ niv3{
     border:groove;
     }
 
-ligne{padding-top:30px;/*border:solid;*/}
+ligne{
+  padding-top:30px;/*border:solid;*/
+  /*padding-right:30px;*/
+}
 
 
 .lb-image {

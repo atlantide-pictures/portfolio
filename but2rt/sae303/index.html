@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-	<title>SAE 303 - Réseau Multisites</title>
+	<title>SAÉ 303 - Réseau Multisites</title>
 	<link rel="icon" href="../../logo_atlantide.png" type="image/icon type">
 	<link rel="stylesheet" href="../../style.css">
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
@@ -11,23 +11,35 @@
   <body>
   
 	<ul class="navbar">
-		<li><a href="../../index.html"> Page principale </a>
-		<li><a href="../index.html"> Retour </a>
-		<li><a href="../../bac/index.html"> BAC </a>
-		<li><a href="../../bts/index.html"> BTS Electrotechnique </a>
-		<li><a href="../../but2/index.html"> BUT 2 - GEII </a>
-		<li><a href="../../but2/index.html"> BUT 3 - GEII </a>
-		<li><a href="../../metrages/index.html"> Métrages </a>
+		<li><a href="../../index.html">Page principale</a>
+		<li><a href="../index.html">Retour</a>
+		<li><a href="../../bac/index.html">BAC</a>
+		<li><a href="../../bts/index.html">BTS Electrotechnique</a>
+		<li><a href="../../but2/index.html">BUT 2 - GEII</a>
+		<li><a href="../../but2/index.html">BUT 3 - GEII</a>
+		<li><a href="../../metrages/index.html">Métrages</a>
 	</ul>
     
     <div class="ligne">
-		<h1>SAE 303 - Réseau multisites</h1>
+		<h1>SAÉ 303 - Réseau multisites</h1>
     </div>
 	
     <div class="ligne">
 		<h3>Récapitulatif :</h3>
+		<p style="font-style: italic; text-indent: 2em;">
+			La SAÉ ou Situation d’Apprentissage et d’Évaluation est un ensemble de tâches à réaliser par l’étudiant, visant à développer une compétence essentielle à l’obtention du diplôme.
+		</p>
+		<p style="text-indent: 2em;">
+			Ce projet consiste en la mise en place d’un réseau entre divers sites d’une même entreprise. Plusieurs équipements sont mis en place : routeurs, commutateurs et ordinateurs.
+		</p>
 		<p>
-			L'objectif de ce projet était de concevoir une application communicante avec plusieurs machines, tout en chiffrant les données envoyées et ou le receveur n'a aucune idée de qui est le transmetteur.
+			Le client nous a demandé de répondre à certaines contraintes techniques. Dans le but d’assurer une haute disponibilité (HA), le client souhaitait que chaque site soit abonné à deux FAI différents, que les protocoles MSTP, VRRP et PAT soient mis en place, que le routage inter VLAN soit opérationnel et enfin que les machines est un adressage dynamique.
+		</p>
+		<p>
+			La simulation de ce réseau s’est fait en utilisant EVE-NG, qui est un émulateur de machines (commutateurs, routeurs, VPC…) de différentes marques (Cisco, Juniper, Microsoft…).
+		</p>
+		<p>
+			Compétences développées : Administrer, Connecter, Orchestrer et Développer
 		</p>
 		<table width="30%">
 			<td>
@@ -44,20 +56,161 @@
 	</div>
 	
 	<div class="ligne">
+		<h3>Dossier de la SAE 303 :</h3>
+		<embed src="docs/sae303_rapport_lan_v2.pdf" width="60%" height="800" type="application/pdf"/>
+	</div>
+	
+	<div class="ligne">
 		<h3>VLAN :</h3>
-		<p>
+		<p style="text-indent: 2em;">
 			Je me suis occupé de la programmation du VLAN.
 		</p>
 	</div>
 	
 	<div class="ligne">
 		<h3>VRRP :</h3>
-		<p>
+		<p style="text-indent: 2em;">
 			Le protocole VRRP permet d'assurer la haute disponibilité (HA ou High Availability) entre deux routeurs.
 		</p>
 	</div>
-
 	
+	<div class="ligne">
+		<h3>MSTP :</h3>
+		<p style="text-indent: 2em;">
+			Le protocole MSTP (Multiple Spanning Tree Protocol) permet d'assurer la haute disponibilité (HA ou High Availability) entre deux commutateurs. Il permet de créer plusieurs instances ou ST (Spanning Tree) pour chaque réseau virtuel.
+		</p>
+	</div>
+	
+	<div class="ligne">
+		<h3>L'adressage dynamique :</h3>
+		<p style="text-indent: 2em;">
+			L’adressage dynamique des machines se fait en utilisant un serveur DHCP. Ici nous avons utilisé un routeur pour serveur DHCP.
+		</p>
+	</div>
+	
+	<div class="ligne">
+		<h3>PAT :</h3>
+		<p style="text-indent: 2em;">
+			Le protocole PAT (Port Address Translation) ou NAT Overload (Network Address Translation) permet de n’exposer qu’une seule adresse de sortie pour un routeur, mais d’utiliser plusieurs ports pour les requêtes.
+		</p>
+	</div>
+
+	<div class="ligne">
+		<h3>Activités de la SAE 3 :</h3>
+		<table width="100%" style="text-align :center;border-collapse: collapse; border-width:0px; border-style:solid; border-color:blue;">
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#4a4a4a;">
+				<td style="width:30%;">
+					<h5 style="text-align :center;">
+						Activité réalisée
+					</h5>
+				</td>
+				<td style="width:20%">
+					<h5 style="text-align :center;">
+						Ressources utilisées
+					</h5>
+				</td>
+				<td style="width:20%;">
+					<h5 style="text-align :center;">
+						Traces / Résultats
+					</h5>
+				</td>
+				<td style="width:30%;">
+					<h5 style="text-align :center;">
+						Autoévaluation
+					</h5>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#808e41;">
+				<td>
+					<h5 style="text-align :center;">
+						Mise en place de VRRP
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic; margin-left: 1em">
+						Pour assurer la haute disponibilité (HA) entre deux routeurs.
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						Cisco
+						<br>EVE-NG
+					</p>
+				</td>
+				<td>
+					<a href="code/vrrp_code.txt" target="_blank">
+						<h2>Code</h2>
+					</a>
+					<!--a href="img/carte_prototype.jpg" target="_blank"-->
+						<h2>Démonstration</h2>
+					<!--/a-->
+				</td>		
+				<td>
+					<p style="text-align: center">&#128512</p>
+					<p style="margin-left: 1em; margin-right: 1em">
+						La HA est bien assurée par ce protocole. Quand un routeur tombe, l’autre prend bien le relais.
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#764e75;">
+				<td>
+					<h5 style="text-align :center;">
+						Mise en place de MSTP
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic; margin-left: 1em">
+						
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						Cisco
+						<br>EVE-NG
+					</p>
+				</td>
+				<td>
+					<a href="code/mstp_code.txt" target="_blank">
+						<h2>Code</h2>
+					</a>
+					<!--a href="img/carte_prototype.jpg" target="_blank"-->
+						<h2>Démonstration</h2>
+					<!--/a-->
+				</td>		
+				<td>
+					<p style="text-align: center">&#128512</p>
+					<p style="margin-left: 1em; margin-right: 1em">
+						
+					</p>
+				</td>
+			</tr>
+			<tr style="border-top: 1px;border-bottom: solid;border-bottom-color: black;background-color:#a19c1b;">
+				<td>
+					<h5 style="text-align :center;">
+						Mise en place de PAT
+					</h5>
+					<p style="margin-bottom: 1em; font-style: italic;  margin-left: 1em">
+						Pour que les machines puissent échanger avec l’extérieur, il faut mettre en place le PAT.
+					</p>
+				</td>
+				<td>
+					<p style="text-align: center">
+						Cisco
+						<br>EVE-NG
+					</p>
+				</td>
+				<td>
+					<a href="code/pat_code.txt" target="_blank">
+						<h2>Code</h2>
+					</a>
+					<!--a href="img/carte_prototype.jpg" target="_blank"-->
+						<h2>Démonstration</h2>
+					<!--/a-->
+				</td>		
+				<td>
+					<p style="margin-left: 1em; margin-right: 1em">
+						
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
 
 
 	<!--
@@ -78,7 +231,7 @@
 	
 	
     
-    <address>Version en date du 10/02/2026 par Théo-Félix ADAM.</address>    
+    <address>Version en date du 29/03/2026 par Théo-Félix ADAM.</address>    
    
   </body>
 </html>

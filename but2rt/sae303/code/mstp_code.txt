@@ -1,0 +1,11 @@
+S06(config)# spanning-tree mode mst
+S06(config)# spanning-tree mst configuration
+S06(config-mst)# name Strasbourg.UC-Exchange
+S06(config-mst)# revision 1
+S06(config-mst)# instance 1 vlan 10
+S06(config-mst)# instance 2 vlan 20
+S06(config-mst)# instance 3 vlan 30
+S06(config-mst)# exit
+S06(config)# spanning-tree mst 1 root primary (ou secondary)
+S06(config)# spanning-tree mst 2 root primary (ou secondary)
+S06(config)# spanning-tree mst 3 root primary (ou secondary)

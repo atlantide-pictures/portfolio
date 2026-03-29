@@ -1,0 +1,20 @@
+CE1-1(config)# int e0/0
+CE1-1(config-if)# ip nat inside
+CE1-1(config-if)# exit
+CE1-1(config)# int e0/1
+CE1-1(config-if)# ip nat inside
+CE1-1(config-if)# exit
+CE1-1(config)# int e0/2
+CE1-1(config-if)# ip nat outside
+CE1-1(config-if)# ip 203.0.113.1 255.255.255.0
+CE1-1(config-if)# no shutdown
+CE1-1(config-if)# exit
+CE1-1(config)# access-list 1 permit 10.242.110.0 0.0.0.255
+CE1-1(config)# access-list 2 permit 10.242.120.0 0.0.0.255
+CE1-1(config)# access-list 3 permit 10.242.130.0 0.0.0.255
+CE1-1(config)# ip nat inside source list 1 interface e0/2 overload
+CE1-1(config)# ip nat Inside source list 2 interface e0/2 overload
+CE1-1(config)# ip nat Inside source list 3 interface e0/2 overload
+CE1-1(config)# ip route 0.0.0.0 0.0.0.0 203.0.113.2
+CE1-1(config)# router ospf 1
+CE1-1(config-router)# default-information originate
